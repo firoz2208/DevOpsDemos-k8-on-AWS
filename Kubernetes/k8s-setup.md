@@ -6,7 +6,7 @@
 1. install AWSCLI
    ```sh 
     curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip
-    apt install unzip python
+    apt install unzip python3
     unzip awscli-bundle.zip
     #sudo apt-get install unzip - if you dont have unzip in your system
     ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
@@ -34,11 +34,11 @@
 1. Create a Route53 private hosted zone (you can create Public hosted zone if you have a domain)
 1. create an S3 bucket 
    ```sh
-    aws s3 mb s3://dev.k8s.valaxy.in
+    aws s3 mb s3://dev.k8ss.valaxy.in
    ```
 1. Expose environment variable:
    ```sh 
-    export KOPS_STATE_STORE=s3://dev.k8s.valaxy.in
+    export KOPS_STATE_STORE=s3://dev.k8ss.valaxy.in
    ```
 1. Create sshkeys before creating cluster
    ```sh
@@ -46,11 +46,11 @@
    ```
 1. Create kubernetes cluster definitions on S3 bucket 
    ```sh 
-    kops create cluster --cloud=aws --zones=ap-southeast-1b --name=dev.k8s.valaxy.in --dns-zone=valaxy.in --dns private
+    kops create cluster --cloud=aws --zones=ap-south-1a --name=dev.k8ss.valaxy.in --dns-zone=valaxy.in --dns private
     ```
 1. Create kubernetes cluser
     ```sh 
-      kops update cluster dev.k8s.valaxy.in --yes
+      kops update cluster dev.k8ss.valaxy.in --yes
      ```
 1. Validate your cluster 
      ```sh 
