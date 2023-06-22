@@ -58,7 +58,8 @@
     ```
 
 1. To list nodes
-   ```sh 
+   ```sh
+     kops export kubecfg --admin
      kubectl get nodes 
    ```
 
